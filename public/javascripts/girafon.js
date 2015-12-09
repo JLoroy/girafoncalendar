@@ -65,6 +65,10 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
         else return date.format('dddd').toLowerCase();
     };
 
+    $scope.meClass = function(name) {
+        return (name==$scope.authData.facebook.displayName)?"myrow":"notmyrow"
+    };
+
     //var inputDtFormat = "DD-MM-YY";
 //var currDt = moment("07-12-15", inputDtFormat);
 //var lastDt = moment("31-01-16", inputDtFormat);

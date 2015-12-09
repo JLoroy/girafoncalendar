@@ -71,7 +71,7 @@
                 <table class="table texter-center">
                     <thead>
                     <th class="colName">Date</th>
-                    <th ng-repeat="user in users" class="colName">{{user.name}}</th>
+                    <th ng-repeat="user in users" class="colName" ng-class="meClass(user.name)">{{user.name}}</th>
                     </thead>
                     <tbody>
                         <tr ng-repeat="day in calendar">
