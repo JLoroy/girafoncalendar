@@ -60,9 +60,9 @@
                 <tbody>
                     <tr ng-repeat="day in calendar">
                         <th>{{day.date}}</th>
-                        <td ng-repeat="user in users" ng-click="clickedDay=day;clickedName=user.name" class="colExam">
-                            <div class="rounded" ng-if="(day[user.name]) || (clickedDay == day && clickedName == user.name)">
-                                <input class="examInput" ng-model="day[user.name]" type="text" />
+                        <td ng-repeat="user in users" ng-click="clicked.day=day;clicked.name=user.name" class="colExam">
+                            <div class="rounded" ng-if="day[user.name] != undefined || (clicked.day == day && clicked.name == user.name)">
+                                <input class="examInput" ng-model="day[user.name]" type="text" ng-disabled="user.name!=authData.facebook.displayName"/>
                             </div>
                         </td>
                     </tr>
