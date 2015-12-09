@@ -1,6 +1,12 @@
 
-var app = angular.module('girafon',[]);
+var app = angular.module('girafon',["firebase"]);
 
-app.controller('girafonController', ['$scope', '$filter', '$http','$window', function($scope, $filter, $http, $window) {
-$scope.test = "it works ! ";
+app.controller('girafonController', ['$scope', '$filter', '$http','$window','$firebaseObject', function($scope, $filter, $http, $window, $firebaseObject) {
+    $scope.test = "it works ! ";
+
+    var ref = new Firebase("https://girafoncalendar.firebaseio.com");
+
+    var syncObject = $firebaseObject(ref);
+
+    syncObject.$bindTo($scope, "data");
 }]);
