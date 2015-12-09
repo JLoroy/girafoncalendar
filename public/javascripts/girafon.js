@@ -30,7 +30,6 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     $scope.auth.$onAuth(function(authData) {
         $scope.authData = authData;
         usersRef.child(authData.facebook.id).set({name: authData.facebook.displayName, picture: authData.facebook.profileImageURL});
-        console.log(authData.facebook);
     });
 
     $scope.dateClass = function(date){
@@ -129,3 +128,12 @@ app.directive('modal', function () {
         }
     };
 });*/
+
+//var inputDtFormat = "DD-MM-YY";
+//var currDt = moment("07-12-15", inputDtFormat);
+//var lastDt = moment("31-01-16", inputDtFormat);
+//
+//while(currDt.format(inputDtFormat) != lastDt.format(inputDtFormat)){
+//    currDt = currDt.add(1,"days");
+//    calendarRef.push({date: currDt.format("D MMMM")})
+//}
