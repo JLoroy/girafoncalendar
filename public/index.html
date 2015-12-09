@@ -54,7 +54,7 @@
             <div id="messages" scroll-glue>
                 <p ng-repeat="msg in chat.messages">
                     <span><b>{{msg.name}}</b> {{msg.content}}</span>
-                    <span class="timestamp">10:22 9 décembre</span>
+                    <span class="timestamp">{{longToDate(msg.time)}}</span>
 
                 </p>
             </div>
