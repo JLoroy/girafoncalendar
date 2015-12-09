@@ -63,7 +63,7 @@
                             <th class="colExam">{{day.date}}</th>
                             <td ng-repeat="user in users" ng-click="clickedDay=day;clickedName=user.name" class="colExam">
                                 <div class="rounded" ng-if="(day[user.name]) || (clickedDay == day && clickedName == user.name)">
-                                    <input class="examInput" ng-model="day[user.name]" type="text" />
+                                    <input class="examInput" ng-model="day[user.name]" type="text" ng-disabled="user.name!=authData.facebook.displayName" maxlength="100"/>
                                 </div>
                             </td>
                         </tr>
