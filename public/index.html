@@ -90,12 +90,10 @@
             <div id="calendar" class="table-responsive col-md-10">
                 <table class="table texter-center">
                     <thead>
-                    <th class="colName">Date</th>
                     <th ng-repeat="user in users" class="colName" ng-class="meClass(user.name)">{{user.name}}</th>
                     </thead>
                     <tbody>
                         <tr class="trow" ng-repeat="day in calendar">
-                            <th class="colExam" ng-class="dayClass(day.date)">{{translateDt(day.date)}}</th>
                             <td ng-repeat="user in users" ng-click="click.day=(user.name == authData.facebook.displayName)?day:{};click.name=(user.name == authData.facebook.displayName)?user.name:''" class="colExam" ng-class="dayClass(day.date)">
                                     <div class="rounded" ng-if="day[user.name] || (click.day == day && click.name == user.name)">
                                         <input class="examInput" ng-model="day[user.name]" type="text" ng-blur="click.day = ''" ng-disabled="user.name!=authData.facebook.displayName" maxlength="100"/>
