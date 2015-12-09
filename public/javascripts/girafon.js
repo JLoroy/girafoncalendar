@@ -1,3 +1,13 @@
+if (!String.prototype.trim) {
+    (function() {
+        // Make sure we trim BOM and NBSP
+        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+        String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+        };
+    })();
+}
+
 
 var app = angular.module('girafon',["firebase",'luegg.directives']);
 
@@ -28,9 +38,9 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     $scope.auth = Auth;
 
     // any time auth status updates, add the user data to scope
-    $scope.auth.$onAuth(function(authData) {
+    $scope.auth.$onAuth(function (authData) {
         $scope.authData = authData;
-        usersRef.child(authData.facebook.id).set({name: authData.facebook.displayName, picture: authData.facebook.profileImageURL});
+        usersRef.child(authData.facebook.id).set({name: authData.facebook.displayName, picture: authData.facebook.profileImageURL})
     });
 
     $scope.dateClass = function(date){
@@ -43,8 +53,14 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
         }
     };
     $scope.sendMsg = function(msg){
-        var msgRef = new Firebase("https://girafoncalendar.firebaseio.com/chat/messages");
-        msgRef.push({name: $scope.authData.facebook.displayName, content: msg, time: Firebase.ServerValue.TIMESTAMP});
+        if(msg.length) {
+            var msgRef = new Firebase("https://girafoncalendar.firebaseio.com/chat/messages");
+            msgRef.push({
+                name: $scope.authData.facebook.displayName,
+                content: msg,
+                time: Firebase.ServerValue.TIMESTAMP
+            });
+        }
     };
 
     $scope.translateDt = function(dateStr) {
