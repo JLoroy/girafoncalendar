@@ -46,6 +46,23 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
         var msgRef = new Firebase("https://girafoncalendar.firebaseio.com/chat/messages");
         msgRef.push({name: $scope.authData.facebook.displayName, content: msg});
     };
+
+    $scope.translateDt = function(dateStr) {
+        return moment(dateStr,'DD-MM-YYYY').format('D MMMM');
+    };
+
+    $scope.isToday = function(dateStr) {
+        return dateStr == moment().format('DD-MM-YYYY');
+    };
+
+    //var inputDtFormat = "DD-MM-YY";
+//var currDt = moment("07-12-15", inputDtFormat);
+//var lastDt = moment("31-01-16", inputDtFormat);
+//
+//while(currDt.format(inputDtFormat) != lastDt.format(inputDtFormat)){
+//    currDt = currDt.add(1,"days");
+//    calendarRef.push({date: currDt.format("D MMMM")})
+//}
 /*
 // and use it in our controller
 app.controller("SampleCtrl", ["$scope", "Auth",

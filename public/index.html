@@ -62,9 +62,10 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="day in calendar">
-                            <th class="colExam">{{day.date}}</th>
-                            <td ng-repeat="user in users" ng-click="click.day=day;click.name=user.name" class="colExam">
-                                <div class="rounded" ng-if="(day[user.name]) || (click.day == day && click.name == user.name)">
+                            <th class="colExam">{{translateDt(day.date)}}</th>
+                            <td ng-repeat="user in users" ng-click="click.day=(user.name == authData.facebook.displayName)?day:{};click.name=(user.name == authData.facebook.displayName)?user.name:''" class="colExam">
+                                <img ng-if="day[user.name] && isToday(day.date)" src="http://photo4.ask.fm/148/741/660/-349996982-1stq3rg-7r2gi0397s5j6bk/original/pacman14183048921418305120.png" width="20px"/>
+                                <div class="rounded" ng-if="day[user.name] || (click.day == day && click.name == user.name)">
                                     <input class="examInput" ng-model="day[user.name]" type="text" ng-blur="click.day = ''" ng-disabled="user.name!=authData.facebook.displayName" maxlength="100"/>
                                 </div>
                             </td>
