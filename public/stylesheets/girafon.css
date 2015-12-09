@@ -75,7 +75,7 @@
     height:100%;
 }
 #chat{
-    min-height: 200px;
+    min-height: 700px;
     max-height:700px;
     background-color: #ffbb46;
     padding:10px;
@@ -91,12 +91,16 @@
 #messages{
     position: absolute;
     bottom: 0px;
+    width:90%
+}
+.mess{
+    width:100%;
+    position:relative;
 }
 .timestamp{
     float:right;
-    font-family: Montserrat;
     font-size: xx-small;
-    color: rgba(95, 158, 160, 0);
+    color: rgb(54, 64, 84);
 }
 #new_message{
     width:100%;
