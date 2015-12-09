@@ -60,7 +60,9 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     };
 
     $scope.dayClass = function(dtStr) {
-        return moment(dtStr,'DD-MM-YYYY').format('dddd').toLowerCase();
+        var date = moment(dtStr,'DD-MM-YYYY');
+        if(moment(moment().format('DD-MM-YY'),'DD-MM-YY') > date) return "daypassed";
+        else return date.format('dddd').toLowerCase();
     };
 
     //var inputDtFormat = "DD-MM-YY";

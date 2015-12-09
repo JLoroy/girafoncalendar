@@ -159,6 +159,10 @@
     outline: 1px solid #d89449;
 }
 
-.saturday{
-    background-color: #ff00ff;
+.sunday{
+    background-color: rgba(255, 158, 1, 0.08);
+}
+
+.daypassed{
+    background-color: rgba(0, 0, 0, 0.11);
 }
