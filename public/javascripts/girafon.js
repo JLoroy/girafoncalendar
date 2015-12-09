@@ -12,4 +12,14 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
 
     syncUsers.$bindTo($scope, "users");
     syncCalendar.$bindTo($scope, "calendar");
+
+    $scope.dateClass = function(date){
+        jour = date.substring(0,3);
+        switch(jour){
+            case "Lun":
+                return "warning";
+            default:
+                return "";
+        }
+    };
 }]);

@@ -28,13 +28,13 @@
             <table class="table">
                 <thead>
                     <th>Date</th>
-                    <th ng-repeat="user in users">{{user.name}}</th>
+                    <th ng-repeat="(key,value) in users">{{key}}</th>
                 </thead>
                 <tbody>
-                <tr ng-repeat="date in calendar" ng-class="dateClass(date.date)">
-                    <td>date.date</td>
-                    <td ng-repeat="user in users"><input ng-model="date[user]"></td>
-                </tr>
+                    <tr ng-repeat="(key,value) in calendar" ng-class="dateClass(key)">
+                        <td>{{key}}</td>
+                        <td ng-repeat="user in users"><input ng-model="value[user]"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
