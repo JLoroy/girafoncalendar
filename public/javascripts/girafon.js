@@ -59,6 +59,16 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
         return moment(longStr).format("ddd hh:mm");
     };
 
+    $scope.dayClass = function(dtStr) {
+        var date = moment(dtStr,'DD-MM-YYYY');
+        if(moment(moment().format('DD-MM-YY'),'DD-MM-YY') > date) return "daypassed";
+        else return date.format('dddd').toLowerCase();
+    };
+
+    $scope.meClass = function(name) {
+        return (name==$scope.authData.facebook.displayName)?"myrow":"notmyrow"
+    };
+
     //var inputDtFormat = "DD-MM-YY";
 //var currDt = moment("07-12-15", inputDtFormat);
 //var lastDt = moment("31-01-16", inputDtFormat);
