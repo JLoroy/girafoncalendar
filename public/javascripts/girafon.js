@@ -9,4 +9,14 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     var syncObject = $firebaseObject(ref);
 
     syncObject.$bindTo($scope, "data");
+    $scope.dateClass = function(date){
+        jour = date.substring(0,3);
+        switch(jour){
+            case "Lun":
+                return "warning";
+            default:
+                return "";
+        }
+    };
+
 }]);

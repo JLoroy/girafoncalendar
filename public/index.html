@@ -31,10 +31,10 @@
                     <th ng-repeat="(key,value) in users">{{key}}</th>
                 </thead>
                 <tbody>
-                <tr ng-repeat="(key,value) in calendar" ng-class="dateClass(key)">
-                    <td>{{key}}</td>
-                    <td ng-repeat="user in users"><input ng-model="value[user]"></td>
-                </tr>
+                    <tr ng-repeat="(key,value) in calendar" ng-class="dateClass(key)">
+                        <td>{{key}}</td>
+                        <td ng-repeat="user in users"><input ng-model="value[user]"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
