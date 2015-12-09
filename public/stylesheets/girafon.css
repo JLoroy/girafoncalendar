@@ -49,6 +49,7 @@
     width:75px;
     height:75px;
     boder-radius:20px;
+    margin:5px;
 }
 
 #container{
@@ -56,7 +57,7 @@
     margin:0;
     position:absolute;
     top: 120px;
-    bottom:0;
+    min-height:100%;
     width:100%;
 }
 
@@ -87,13 +88,34 @@
     background-color: #ffffff;
     border-radius:5px;
 }
-.style-5 input[type="text"] {
+.colName,
+.colExam{
+    text-align: center;
+    max-width: 183px;
+}
+.exam{
     padding: 10px;
+    background-color: #ffbb46;
+    border-radius: 30px;
+    max-width: 200px;
     border: solid 1px #fff;
     box-shadow: inset 1px 1px 2px 0 #707070;
     transition: box-shadow 0.3s;
 }
-.style-5 input[type="text"]:focus,
-.style-5 input[type="text"].focus {
+.exam:focus,
+.exam.focus {
     box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+.examInput{
+    border: none;
+    background: #FFF;
+    width: 165px;
+}
+.rounded {
+    background-color: #ffbb46;
+    text-align: center;
+    background:  url(rounded.gif) no-repeat center;
+    padding: 8px;
+    margin:auto;
 }

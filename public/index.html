@@ -31,7 +31,7 @@
         </div>
     </div>
     <div id="login">
-        <div ng-if="authData"><img id="PP" src="{{authData.facebook.profileImageURL}}"/><i class="fa fa-facebook-square fa-lg"></i> {{authData.facebook.displayName}}</div>
+        <div ng-if="authData"><img id="PP" src="{{authData.facebook.profileImageURL}}"/>{{authData.facebook.displayName}}</div>
         <div ng-if="!authData"><a type="button" ng-click="auth.$authWithOAuthPopup('facebook')"  class="btn btn-lg btn-primary"><i class="fa fa-facebook-square fa-lg"></i> Login</a></div>
     </div>
 </div>
@@ -50,15 +50,19 @@
     <div id="main" class="col-md-10">
         <!--<a type="button" class="btn btn-default" ng-click="toggleModal()">Ajouter</a>-->
         <div id="calendar" class="table-responsive">
-            <table class="table">
+            <table class="table texter-center">
                 <thead>
                     <th>Date</th>
-                    <th ng-repeat="user in users">{{user.name}}</th>
+                    <th ng-repeat="user in users" class="colName">{{user.name}}</th>
                 </thead>
                 <tbody>
                     <tr ng-repeat="day in calendar">
                         <th>{{day.date}}</th>
-                        <td ng-repeat="user in users"><input ng-model="day[user.name]" class="style-5"></td>
+                        <td ng-repeat="user in users" ng-click="clickedDay=day;clickedName=user.name" class="colExam">
+                            <div class="rounded" ng-if="(day[user.name]) || (clickedDay == day && clickedName == user.name)">
+                                <input class="examInput" ng-model="day[user.name]" type="text" />
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
