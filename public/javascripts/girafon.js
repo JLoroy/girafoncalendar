@@ -10,6 +10,11 @@ app.factory("Auth", ["$firebaseAuth",
 
 app.controller('girafonController', ['$scope', '$filter', '$http','$window','$firebaseObject', 'Auth', function($scope, $filter, $http, $window, $firebaseObject, Auth) {
     $scope.test = "it works ! ";
+    $scope.chatIsOn = true;
+    $scope.toggleChat = function(){
+        console.log('hey');
+        $scope.chatIsOn = !$scope.chatIsOn;
+    };
     $scope.currMsg = '';
     $scope.click = {};
 

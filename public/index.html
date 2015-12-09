@@ -27,7 +27,9 @@
 <body  ng-App="girafon" ng-controller="girafonController">
 <div id="header">
     <div id="banner">
-        <div id="logo"><img src="http://photo4.ask.fm/148/741/660/-349996982-1stq3rg-7r2gi0397s5j6bk/original/pacman14183048921418305120.png"/></div>
+        <div id="logo">
+            <img src="http://photo4.ask.fm/148/741/660/-349996982-1stq3rg-7r2gi0397s5j6bk/original/pacman14183048921418305120.png"/>
+        </div>
         <div id="title">
             <h1>Examens des girafons</h1>
             <div id="subtitle">
@@ -48,8 +50,10 @@
     </div>
 </div>
 <div id="container">
-    <div id="sidePane" class="col-md-2">
-        <h3>Chat :</h3><a>cacher</a>
+    <div class="chatButton" ng-if="!chatIsOn"><a type="button" class="btn btn-warning" ng-click="toggleChat();"><h3 class="chatTitle">Chat :</h3></a></div>
+    <div class="chatButton" ng-if="chatIsOn"><a type="button" class="btn btn-warning" ng-click="toggleChat();"><h3 class="chatTitle">Pas Chat :</h3></a></div>
+
+    <div id="sidePane" ng-if="chatIsOn" class="col-md-2">
         <div id="chat">
             <div id="messages" scroll-glue>
                 <p ng-repeat="msg in chat.messages" class="mess">
@@ -68,7 +72,7 @@
             </form>
         </div>
     </div>
-    <div id="main" class="col-md-10">
+    <div id="main" ng-class="{'col-md-10':chatIsOn,'col-md-12':!chatIsOn}">
         <!--<a type="button" class="btn btn-default" ng-click="toggleModal()">Ajouter</a>-->
         <div id="calendarContainer" class="col-md-12">
             <table id="dates" class="table texter-center col-md-2">
@@ -88,7 +92,7 @@
                     <th ng-repeat="user in users" class="colName" ng-class="meClass(user.name)">{{user.name}}</th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="day in calendar">
+                        <tr class="trow" ng-repeat="day in calendar">
                             <th class="colExam" ng-class="dayClass(day.date)">{{translateDt(day.date)}}</th>
                             <td ng-repeat="user in users" ng-click="click.day=(user.name == authData.facebook.displayName)?day:{};click.name=(user.name == authData.facebook.displayName)?user.name:''" class="colExam" ng-class="dayClass(day.date)">
                                     <div class="rounded" ng-if="day[user.name] || (click.day == day && click.name == user.name)">
