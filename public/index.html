@@ -50,11 +50,16 @@
     <div id="sidePane" class="col-md-2">
         <div id="chat">
             <div id="messages" scroll-glue>
-                <p ng-repeat="msg in chat.messages" class="mess">
+                <div ng-repeat="msg in chat.messages">
+                    <span class="messHeader">
+                        <b class="messUser">{{msg.name}}</b>
+                        <i class="timestamp">{{longToDate(msg.time)}}</i>
+                    </span>
+                    <div class="bubble left-top">
                     <span><b>{{msg.name}}</b> {{msg.content}}</span>
                     <span class="timestamp">{{longToDate(msg.time)}}</span>
-
-                </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="new_message" role="form">
