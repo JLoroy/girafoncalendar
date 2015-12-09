@@ -45,6 +45,11 @@
     font-family: Montserrat;
     font-size: 2em;
 }
+#PP{
+    width:75px;
+    height:75px;
+    boder-radius:20px;
+}
 
 #container{
     background-color: #5a9fd5;

@@ -2,7 +2,7 @@
 [debug] Command:      node C:\Users\Justin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
 [debug] Platform:     win32
 [debug] Node Version: v0.12.7
-[debug] Time:         Wed Dec 09 2015 09:37:49 GMT+0100 (Paris, Madrid)
+[debug] Time:         Wed Dec 09 2015 10:56:33 GMT+0100 (Paris, Madrid)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Listening at http://localhost:5000

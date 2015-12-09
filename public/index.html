@@ -33,8 +33,8 @@
         </div>
     </div>
     <div id="login">
-        <div ng-if="false"><i class="fa fa-facebook-square fa-lg"></i> My Name</div>
-        <div ng-if="true"><a type="button" class="btn btn-lg btn-primary"><i class="fa fa-facebook-square fa-lg"></i> Login</a></div>
+        <div ng-if="authData"><img id="PP" src="{{authData.facebook.profileImageURL}}"/><i class="fa fa-facebook-square fa-lg"></i> {{authData.facebook.displayName}}</div>
+        <div ng-if="!authData"><a type="button" ng-click="auth.$authWithOAuthPopup('facebook')"  class="btn btn-lg btn-primary"><i class="fa fa-facebook-square fa-lg"></i> Login</a></div>
     </div>
 </div>
 <div id="container">
@@ -50,7 +50,6 @@
         </form>
     </div>
     <div id="main" class="col-md-10">
-        <a type="button" ng-click="auth.$authWithOAuthPopup('facebook')" class="btn btn-primary">Login With Facebook</a>
         <!--<a type="button" class="btn btn-default" ng-click="toggleModal()">Ajouter</a>-->
         <div id="calendar" class="table-responsive">
             <table class="table">
