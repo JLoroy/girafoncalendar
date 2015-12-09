@@ -16,14 +16,6 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     var calendarRef = new Firebase("https://girafoncalendar.firebaseio.com/calendar");
     var chatRef = new Firebase("https://girafoncalendar.firebaseio.com/chat");
 
-    $scope.auth = Auth;
-
-    // any time auth status updates, add the user data to scope
-    $scope.auth.$onAuth(function(authData) {
-        $scope.authData = authData;
-        console.log(authData);
-    });
-
     var syncUsers = $firebaseObject(usersRef);
     var syncCalendar = $firebaseObject(calendarRef);
     var syncChat = $firebaseObject(chatRef);
@@ -31,6 +23,15 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     syncUsers.$bindTo($scope, "users");
     syncCalendar.$bindTo($scope, "calendar");
     syncChat.$bindTo($scope, "chat");
+
+    $scope.auth = Auth;
+
+    // any time auth status updates, add the user data to scope
+    $scope.auth.$onAuth(function(authData) {
+        $scope.authData = authData;
+        usersRef.child(authData.facebook.id).set({name: authData.facebook.displayName, picture: authData.facebook.profileImageURL});
+        console.log(authData.facebook);
+    });
 
     $scope.dateClass = function(date){
         jour = date.substring(0,3);
@@ -43,7 +44,7 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     };
     $scope.sendMsg = function(msg){
         var msgRef = new Firebase("https://girafoncalendar.firebaseio.com/chat/messages");
-        msgRef.push({name: "Fabian", content: msg});
+        msgRef.push({name: $scope.authData.facebook.displayName, content: msg});
     };
 /*
 // and use it in our controller
