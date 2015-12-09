@@ -28,14 +28,17 @@
                 <b>{{msg.name}}</b> {{msg.content}}
             </p>
         </div>
-        <div id="new_message">
-            <input placeholder="talk shit" class="col-md-9" ng-model="currMsg">
-            <a type="button" class="btn btn-primary col-md-3" ng-click="sendMsg(currMsg);currMsg=''">Send</a>
-        </div>
+        <form id="new_message"role="form">
+            <div class="form-group form-inline">
+                <input type="text" class="form-control" placeholder="Talk shit here" ng-model="currMsg"/>
+                <button type="submit" class="form-control btn btn-default"  ng-click="sendMsg(currMsg);currMsg=''">Zbam</button>
+            </div>
+        </form>
     </div>
     <div id="main" class="col-md-10">
         <a type="button" ng-click="auth.$authWithOAuthPopup('facebook')" class="btn btn-primary">Login With Facebook</a>
-        <div class="table-responsive">
+        <!--<a type="button" class="btn btn-default" ng-click="toggleModal()">Ajouter</a>-->
+        <div id="calendar" class="table-responsive">
             <table class="table">
                 <thead>
                     <th>Date</th>
@@ -43,13 +46,22 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="day in calendar">
-                        <td>{{day.date}}</td>
-                        <td ng-repeat="user in users"><input ng-model="day[user.name]"></td>
+                        <th>{{day.date}}</th>
+                        <td ng-repeat="user in users"><input ng-model="day[user.name]" class="style-5"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<!--<modal title="Ajout d'une colonne" visible="showModal">
+    <form role="form">
+        <div class="form-group">
+            <label>Nouvelle Colonne</label>
+            <input type="text" class="form-control" placeholder="Votre nom" />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</modal>-->
 </body>
 </html>
