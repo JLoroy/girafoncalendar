@@ -227,12 +227,13 @@ div.bubble {
     border: 1px solid #aaa;
     border-radius: 6px;
     color: black;
-    box-shadow: 2px 2px 8px #ddd;
     line-height: 130%;
     font-size: 13px;
 }
 
 div.bubble.you {
+    text-align: left;
+    float: left;
     padding: 5px 10px;
     margin: 5px 10px;
 }
@@ -256,8 +257,8 @@ div.bubble.you:before{
 div.bubble.me {
     text-align: right;
     float: right;
-    padding: 10px 5px;
-    margin: 10px 5px;
+    padding: 5px 10px;
+    margin: 5px 10px;
 }
 div.bubble.me:before{
     content: "";
@@ -270,7 +271,7 @@ div.bubble.me:before{
     border-bottom: 1px solid #aaa;
     border-bottom-color: inherit;
     background-color: inherit;
-    margin: 0 1px 0 -15px;
+    margin: 1px 6px 0 0;
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
