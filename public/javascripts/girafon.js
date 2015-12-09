@@ -1,5 +1,5 @@
 
-var app = angular.module('girafon',["firebase"]);
+var app = angular.module('girafon',["firebase",'luegg.directives']);
 
 app.factory("Auth", ["$firebaseAuth",
     function($firebaseAuth) {
