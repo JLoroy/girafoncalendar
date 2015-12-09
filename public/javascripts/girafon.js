@@ -11,7 +11,7 @@ app.factory("Auth", ["$firebaseAuth",
 app.controller('girafonController', ['$scope', '$filter', '$http','$window','$firebaseObject', 'Auth', function($scope, $filter, $http, $window, $firebaseObject, Auth) {
     $scope.test = "it works ! ";
     $scope.currMsg = '';
-    $scope.clicked = {};
+    $scope.click = {};
 
     var usersRef = new Firebase("https://girafoncalendar.firebaseio.com/users");
     var calendarRef = new Firebase("https://girafoncalendar.firebaseio.com/calendar");
