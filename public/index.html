@@ -23,11 +23,15 @@
 <div id="header"><div class="title col-md-12"><h1>Examens des girafons</h1></div><div class="subtitle col-md-12"><h3>Edition Janvier 2016</h3></div></div>
 <div id="container">
     <div id="sidePane" class="col-md-2">
-        <div id="chat">hello</div>
+        <div id="chat">
+            <p ng-repeat="msg in chat.messages">
+                <b>{{msg.name}}</b> {{msg.content}}
+            </p>
+        </div>
         <form id="new_message"role="form">
             <div class="form-group form-inline">
-                <input type="text" class="form-control" placeholder="Talk shit here" />
-                <button type="submit" class="form-control btn btn-default">Zbam</button>
+                <input type="text" class="form-control" placeholder="Talk shit here" ng-model="currMsg"/>
+                <button type="submit" class="form-control btn btn-default"  ng-click="sendMsg(currMsg);currMsg=''">Zbam</button>
             </div>
         </form>
     </div>
