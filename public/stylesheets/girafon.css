@@ -227,47 +227,58 @@ html{
     background-color: #ffbb46;
 }
 
-.bubble{
-    background-color: #F2F2F2;
-    border-radius: 5px;
-    box-shadow: 0 0 6px #B2B2B2;
+div.bubble {
+    background: white;
     display: inline-block;
-    padding: 10px 18px;
-    position: relative;
-    vertical-align: top;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    color: black;
+    box-shadow: 2px 2px 8px #ddd;
+    line-height: 130%;
+    font-size: 13px;
 }
 
-.bubble::before {
-    background-color: #F2F2F2;
-    content: "\00a0";
-    display: block;
-    height: 16px;
+div.bubble.you {
+    padding: 5px 10px;
+    margin: 5px 10px;
+}
+div.bubble.you:before{
+    content: "";
     position: absolute;
-    top: 11px;
-    transform:             rotate( 29deg ) skew( -35deg );
-    -moz-transform:    rotate( 29deg ) skew( -35deg );
-    -ms-transform:     rotate( 29deg ) skew( -35deg );
-    -o-transform:      rotate( 29deg ) skew( -35deg );
-    -webkit-transform: rotate( 29deg ) skew( -35deg );
-    width:  20px;
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid #aaa;
+    border-left-color: inherit;
+    border-top: 1px solid #aaa;
+    border-top-color: inherit;
+    background-color: inherit;
+    margin: 1px 0 0 -15px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
-.me {
-    float: left;
-    margin: 5px 45px 5px 20px;
-}
-
-.me::before {
-    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
-    left: -9px;
-}
-
-.you {
+div.bubble.me {
+    text-align: right;
     float: right;
-    margin: 5px 20px 5px 45px;
+    padding: 10px 5px;
+    margin: 10px 5px;
 }
-
-.you::before {
-    box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
-    right: -9px;
+div.bubble.me:before{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid #aaa;
+    border-right-color: inherit;
+    border-bottom: 1px solid #aaa;
+    border-bottom-color: inherit;
+    background-color: inherit;
+    margin: 0 1px 0 -15px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }

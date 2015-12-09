@@ -56,13 +56,15 @@
     <div id="sidePane" ng-if="chatIsOn" class="col-md-2">
         <div id="chat">
             <div id="messages" scroll-glue>
-                <p ng-repeat="msg in chat.messages" class="mess">
+                <div ng-repeat="msg in chat.messages" style="position: relative;">
                     <span class="messHeader col-md-12">
                         <b class="messUser">{{msg.name}}</b>
                         <i class="timestamp">{{longToDate(msg.time)}}</i>
                     </span>
-                    <span class="messContent col-md-12">{{msg.content}}</span>
-                </p>
+                    <div class="bubble" ng-class="(authData.facebook.displayName == msg.name)?'me':'you'">
+                        {{msg.content}}
+                    </div>
+                </div>
             </div>
         </div>
         <div id="new_message" role="form">
