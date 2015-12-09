@@ -1,19 +1,8 @@
-if (!String.prototype.trim) {
-    (function() {
-        // Make sure we trim BOM and NBSP
-        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-        String.prototype.trim = function() {
-            return this.replace(rtrim, '');
-        };
-    })();
-}
-
-
 var app = angular.module('girafon',["firebase",'luegg.directives']);
 
 app.factory("Auth", ["$firebaseAuth",
     function($firebaseAuth) {
-        var ref = new Firebase("https://docs-sandbox.firebaseio.com");
+        var ref = new Firebase("https://girafoncalendar.firebaseio.com");
         return $firebaseAuth(ref);
     }
 ]);
