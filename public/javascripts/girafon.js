@@ -59,6 +59,10 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
         return moment(longStr).format("ddd hh:mm");
     };
 
+    $scope.dayClass = function(dtStr) {
+        return moment(dtStr,'DD-MM-YYYY').format('dddd').toLowerCase();
+    };
+
     //var inputDtFormat = "DD-MM-YY";
 //var currDt = moment("07-12-15", inputDtFormat);
 //var lastDt = moment("31-01-16", inputDtFormat);
