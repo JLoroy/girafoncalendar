@@ -79,6 +79,7 @@
     max-height:700px;
     background-color: #ffbb46;
     padding:10px;
+    margin-top:5px;
     overflow: auto;
     overflow-scrolling: auto;
     width:100%;
@@ -87,13 +88,20 @@
     border-radius:20px;
     position: relative;
 }
-#message{
+#messages{
     position: absolute;
-    top: -250px;
+    bottom: 0px;
+}
+.timestamp{
+    float:right;
+    font-family: Montserrat;
+    font-size: xx-small;
+    color: rgba(95, 158, 160, 0);
 }
 #new_message{
     width:100%;
     padding:2px;
+    height:50px;
 }
 #main{
     margin:0;

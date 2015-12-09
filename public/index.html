@@ -48,16 +48,20 @@
 </div>
 <div id="container">
     <div id="sidePane" class="col-md-2">
+        <div id="new_message" role="form">
+        </div>
         <div id="chat">
             <div id="messages" scroll-glue>
                 <p ng-repeat="msg in chat.messages">
-                    <b>{{msg.name}}</b> {{msg.content}}
+                    <span><b>{{msg.name}}</b> {{msg.content}}</span>
+                    <span class="timestamp">10:22 9 décembre</span>
+
                 </p>
             </div>
         </div>
-        <form id="new_message" role="form">
-                <input type="text" class="col-md-10 input-lg" placeholder="Talk shit here" ng-model="currMsg"/>
-                <button type="submit" class="btn btn-primary col-md-2 btn-lg"  ng-click="sendMsg(currMsg);currMsg=''"><i class="fa fa-weixin fa-lg"></i></button>
+        <form role="form">
+            <input type="text" class="col-md-10 input-lg" placeholder="Talk shit here" ng-model="currMsg"/>
+            <button type="submit" class="btn btn-primary col-md-2 btn-lg"  ng-click="sendMsg(currMsg);currMsg=''"><i class="fa fa-weixin fa-lg"></i></button>
         </form>
     </div>
     <div id="main" class="col-md-10">
