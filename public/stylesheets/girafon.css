@@ -1,22 +1,49 @@
+
 #header{
     background-color: #3f77cc;
     margin:0;
     height:120px;
+    position:relative;
 }
-
-.title{
+#banner{
+    width:30%;
+    float:left;
+}
+#logo{
+    float:left;
+    padding:20px;
+}
+#logo img{
+    width:75px;
+    height:75px;
+}
+#title{
     color:white;
     text-align: center;
     font-family: Montserrat;
     font-size: 6em;
     margin:0;
 }
-.subtitle{
+#subtitle{
     color:white;
     text-align: center;
     font-family: Montserrat;
     font-size: 4em;
     margin:0;
+}
+#login{
+    width:30%;
+    height:100%;
+    float:right;
+    position:relative;
+}
+#login div{
+    float:right;
+    margin : 30px;
+    color:white;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2em;
 }
 
 #container{
@@ -38,6 +65,8 @@
     padding:10px;
     height:60%;
     width:100%;
+    border: solid 3px;
+    border-color: white;
     border-radius:20px;
 }
 #new_message{
@@ -50,10 +79,8 @@
     padding:50px;
 }
 #calendar{
-    border: solid 5px;
-    border-color: white;
     background-color: #ffffff;
-    border-radius:20px;
+    border-radius:5px;
 }
 .style-5 input[type="text"] {
     padding: 10px;
