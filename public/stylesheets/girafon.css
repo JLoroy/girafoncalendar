@@ -3,10 +3,38 @@
     margin:0;
     height:120px;
 }
+
+.title{
+    color:white;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 6em;
+    margin:0;
+}
+.subtitle{
+    color:white;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 4em;
+    margin:0;
+}
+
 #container{
     background-color: #5bcc79;
     margin:0;
     position:absolute;
     top: 120px;
+    bottom:0;
     width:100%;
+}
+
+#sidePane{
+    background-color: #d89449;
+    margin:0;
+    height:100%
+}
+#main{
+    background-color: #43b1cc;
+    margin:0;
+    height:100%
 }

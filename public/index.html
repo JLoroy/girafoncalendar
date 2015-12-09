@@ -16,9 +16,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body  ng-App="girafon" ng-controller="girafonController">
-
-
+<div id="header"><div class="title col-md-12"><h1>Examens des girafons</h1></div><div class="subtitle col-md-12"><h3>Edition Janvier 2016</h3></div></div>
+<div id="container">
+    <div id="sidePane" class="col-md-2"></div>
+    <div id="main" class="col-md-10">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th>Date</th>
+                    <th ng-repeat="user in users">{{user.name}}</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="date in calendar" ng-class="dateClass(date.date)">
+                    <td>date.date</td>
+                    <td ng-repeat="user in users"><input ng-model="date[user]"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>
