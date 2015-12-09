@@ -48,21 +48,21 @@
 </div>
 <div id="container">
     <div id="sidePane" class="col-md-2">
-        <div id="new_message" role="form">
-        </div>
         <div id="chat">
             <div id="messages" scroll-glue>
-                <p ng-repeat="msg in chat.messages">
+                <p ng-repeat="msg in chat.messages" class="mess">
                     <span><b>{{msg.name}}</b> {{msg.content}}</span>
                     <span class="timestamp">10:22 9 décembre</span>
 
                 </p>
             </div>
         </div>
-        <form role="form">
-            <input type="text" class="col-md-10 input-lg" placeholder="Talk shit here" ng-model="currMsg"/>
-            <button type="submit" class="btn btn-primary col-md-2 btn-lg"  ng-click="sendMsg(currMsg);currMsg=''"><i class="fa fa-weixin fa-lg"></i></button>
-        </form>
+        <div id="new_message" role="form">
+            <form role="form">
+                <input type="text" class="col-md-10 input-lg" placeholder="Talk shit here" ng-model="currMsg"/>
+                <button type="submit" class="btn btn-primary col-md-2 btn-lg"  ng-click="sendMsg(currMsg);currMsg=''"><i class="fa fa-weixin fa-lg"></i></button>
+            </form>
+        </div>
     </div>
     <div id="main" class="col-md-10">
         <!--<a type="button" class="btn btn-default" ng-click="toggleModal()">Ajouter</a>-->
@@ -70,19 +70,19 @@
             <div id="calendar" class="table-responsive">
                 <table class="table texter-center">
                     <thead>
-                        <th class="colName">Date</th>
-                        <th ng-repeat="user in users" class="colName">{{user.name}}</th>
+                    <th class="colName">Date</th>
+                    <th ng-repeat="user in users" class="colName">{{user.name}}</th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="day in calendar">
-                            <th class="colExam">{{translateDt(day.date)}}</th>
-                            <td ng-repeat="user in users" ng-click="click.day=(user.name == authData.facebook.displayName)?day:{};click.name=(user.name == authData.facebook.displayName)?user.name:''" class="colExam">
-                                    <div class="rounded" ng-if="day[user.name] || (click.day == day && click.name == user.name)">
-                                        <input class="examInput" ng-model="day[user.name]" type="text" ng-blur="click.day = ''" ng-disabled="user.name!=authData.facebook.displayName" maxlength="100"/>
-                                        <img class="ppv" ng-if="day[user.name] && isToday(day.date)" src="http://photo4.ask.fm/148/741/660/-349996982-1stq3rg-7r2gi0397s5j6bk/original/pacman14183048921418305120.png" width="20px"/>
-                                    </div>
-                            </td>
-                        </tr>
+                    <tr ng-repeat="day in calendar">
+                        <th class="colExam">{{translateDt(day.date)}}</th>
+                        <td ng-repeat="user in users" ng-click="click.day=(user.name == authData.facebook.displayName)?day:{};click.name=(user.name == authData.facebook.displayName)?user.name:''" class="colExam">
+                            <div class="rounded" ng-if="day[user.name] || (click.day == day && click.name == user.name)">
+                                <input class="examInput" ng-model="day[user.name]" type="text" ng-blur="click.day = ''" ng-disabled="user.name!=authData.facebook.displayName" maxlength="100"/>
+                                <img class="ppv" ng-if="day[user.name] && isToday(day.date)" src="http://photo4.ask.fm/148/741/660/-349996982-1stq3rg-7r2gi0397s5j6bk/original/pacman14183048921418305120.png" width="20px"/>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
