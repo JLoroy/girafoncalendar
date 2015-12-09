@@ -51,23 +51,25 @@
     </div>
     <div id="main" class="col-md-10">
         <!--<a type="button" class="btn btn-default" ng-click="toggleModal()">Ajouter</a>-->
-        <div id="calendar" class="table-responsive">
-            <table class="table texter-center">
-                <thead>
-                    <th>Date</th>
-                    <th ng-repeat="user in users" class="colName">{{user.name}}</th>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="day in calendar">
-                        <th>{{day.date}}</th>
-                        <td ng-repeat="user in users" ng-click="clickedDay=day;clickedName=user.name" class="colExam">
-                            <div class="rounded" ng-if="(day[user.name]) || (clickedDay == day && clickedName == user.name)">
-                                <input class="examInput" ng-model="day[user.name]" type="text" />
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="calendarContainer">
+            <div id="calendar" class="table-responsive">
+                <table class="table texter-center">
+                    <thead>
+                        <th class="colName">Date</th>
+                        <th ng-repeat="user in users" class="colName">{{user.name}}</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="day in calendar">
+                            <th class="colExam">{{day.date}}</th>
+                            <td ng-repeat="user in users" ng-click="clickedDay=day;clickedName=user.name" class="colExam">
+                                <div class="rounded" ng-if="(day[user.name]) || (clickedDay == day && clickedName == user.name)">
+                                    <input class="examInput" ng-model="day[user.name]" type="text" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
