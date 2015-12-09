@@ -39,17 +39,25 @@
 }
 #login div{
     float:right;
-    margin : 30px;
+    margin : 10px;
     color:white;
     text-align: center;
     font-family: Montserrat;
     font-size: 2em;
+    position: relative;
 }
 #PP{
     width:75px;
     height:75px;
-    boder-radius:20px;
+    border-radius:37px;
+    overflow: hidden;
     margin:5px;
+    float:left;
+}
+#fbName{
+    margin-top:30px;
+    vertical-align:middle;
+    float:right;
 }
 
 #container{
@@ -105,37 +113,27 @@
     text-align: center;
     max-width: 150px;
 }
-.exam{
-    padding: 10px;
-    background-color: #ffbb46;
-    border-radius: 30px;
-    max-width: 200px;
-    border: solid 1px #fff;
-    box-shadow: inset 1px 1px 2px 0 #707070;
-    transition: box-shadow 0.3s;
-}
-.exam:focus,
-.exam.focus {
-    box-shadow: inset 1px 1px 2px 0 #c9c9c9;
-}
-
 .examInput{
     border: none;
     background: #ffbb46;
-    width:100%;
+    width:80%;
     text-align: center;
 }
 .rounded {
     background-color: #ffbb46;
     text-align: center;
+    display:inline-block;
     /*background:  url(rounded.gif) no-repeat center;*/
-    border-radius: 30px;
+    border-radius: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
     padding: 8px;
     margin:auto;
 }
-
+.rounded img{
+    float:left;
+    width:20%;
+}
 #chat::-webkit-scrollbar {
     width: 1em;
 }
@@ -145,6 +143,6 @@
 }
 
 #chat::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
+    background-color: #a9a9a9;
+    outline: 1px solid #d89449;
 }
