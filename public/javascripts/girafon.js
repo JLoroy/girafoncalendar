@@ -44,7 +44,7 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
     };
     $scope.sendMsg = function(msg){
         var msgRef = new Firebase("https://girafoncalendar.firebaseio.com/chat/messages");
-        msgRef.push({name: $scope.authData.facebook.displayName, content: msg});
+        msgRef.push({name: $scope.authData.facebook.displayName, content: msg, time: Firebase.ServerValue.TIMESTAMP});
     };
 
     $scope.translateDt = function(dateStr) {
