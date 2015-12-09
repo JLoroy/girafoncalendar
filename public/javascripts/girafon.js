@@ -55,6 +55,10 @@ app.controller('girafonController', ['$scope', '$filter', '$http','$window','$fi
         return dateStr == moment().format('DD-MM-YYYY');
     };
 
+    $scope.longToDate = function(longStr) {
+        return moment(longStr).format("ddd hh:mm");
+    };
+
     //var inputDtFormat = "DD-MM-YY";
 //var currDt = moment("07-12-15", inputDtFormat);
 //var lastDt = moment("31-01-16", inputDtFormat);
