@@ -20,7 +20,7 @@
 }
 
 #container{
-    background-color: #5bcc79;
+    background-color: #6c9ecc;
     margin:0;
     position:absolute;
     top: 120px;
@@ -29,12 +29,26 @@
 }
 
 #sidePane{
-    background-color: #d89449;
-    margin:0;
-    height:100%
+    margin:0px;
+    padding:10px;
+    height:100%;
+}
+#chat{
+    background-color: #ffbb46;
+    padding:10px;
+    height:60%;
+    width:100%;
+    border: solid 5px;
+    border-color: white;
+    border-radius:20px;
+}
+#new_message{
+    width:100%;
+    padding:2px;
+
 }
 #main{
-    background-color: #43b1cc;
     margin:0;
-    height:100%
+    height:100%;
+    padding:50px;
 }
